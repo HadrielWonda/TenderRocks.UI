@@ -1,4 +1,4 @@
-import ServiceCard from '../../ui/ServiceCard';
+import { ServiceCard } from '@/ui';
 
 const ServicesSection = () => {
   const services = [

@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'tender-dark': '#003366',    // Deep blue
-        'tender-light': '#66CCCC',   // Light teal
-        'tender-black': '#111111',   // Text black
+        'tender-dark': '#003366',
+        'tender-light': '#66CCCC',
+        'tender-black': '#111111',
       },
     },
   },

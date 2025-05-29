@@ -1,6 +1,5 @@
-import InputField from '../../ui/InputField';
-import TextAreaField from '../../ui/TextAreaField';
-import ContactItem from '../../ui/ContactItem'; 
+import { InputField, TextAreaField, ContactItem } from '@/ui';
+
 
 const ContactSection = () => (
   <section id="contact" className="py-20 bg-white">
