@@ -1,10 +1,10 @@
-// import type { NextConfig } from "next";
+//import type { NextConfig } from "next"; IDK WHY THIS ISN'T FAILING, I'M LOST
 import path from 'path';
 
 // const nextConfig: NextConfig = {
 //   /* config options here */
 // };
-
+//
 // export default nextConfig;
 
 
