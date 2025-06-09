@@ -3,6 +3,7 @@ import Link from 'next/link';
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 const NavLink = ({ href, children }: NavLinkProps) => (
