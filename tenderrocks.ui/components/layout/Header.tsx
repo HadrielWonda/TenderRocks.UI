@@ -1,4 +1,4 @@
-import { Logo, NavLink } from '@/ui';
+import { Logo, NavLink } from '../ui';
 
 const Header = () => {
   return (

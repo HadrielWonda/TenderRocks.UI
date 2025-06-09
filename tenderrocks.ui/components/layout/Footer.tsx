@@ -1,4 +1,4 @@
-import Logo from '../../ui/Logo';
+import Logo from '../ui/Logo';
 
 const Footer = () => (
   <footer className="bg-tender-dark text-white py-10">

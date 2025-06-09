@@ -1,4 +1,4 @@
-import { InputField, TextAreaField, ContactItem } from '@/ui';
+import { InputField, TextAreaField, ContactItem } from '../ui';
 
 
 const ContactSection = () => (
