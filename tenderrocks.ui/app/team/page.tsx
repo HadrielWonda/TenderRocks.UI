@@ -1,15 +1,16 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Image from 'next/image'
 import { Mail, Phone, GraduationCap, Award } from 'lucide-react'
 
 const team = {
   leader: {
     name: 'Dr. Adetokunbo Soyeye',
     role: 'Lead Researcher & Director',
-    image: '/images/dr-soyeye.jpg',
+    image: '/tksoyeye.PNG',
     bio: 'Dr. Soyeye is a renowned expert in cell biology with over 15 years of research experience. She holds a PhD in Molecular Cell Biology and has published numerous papers in prestigious scientific journals.',
     email: 'a.soyeye@tenderrocks.com',
-    phone: '+1 (555) 123-4567',
+    phone: '+44 7440 028032',
     education: 'PhD in Molecular Cell Biology, University of Cambridge',
     expertise: ['Cell Signaling Pathways', 'Environmental Toxicology', 'Molecular Biology'],
   },
@@ -74,9 +75,13 @@ export default function Team() {
               <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
                 <div>
                   <div className="aspect-square w-full rounded-2xl bg-gray-100 dark:bg-slate-800 overflow-hidden">
-                    <div className="h-full w-full flex items-center justify-center text-gray-400 dark:text-gray-600">
-                      <span>Dr. Soyeye Photo</span>
-                    </div>
+                    <Image
+                      src={team.leader.image}
+                      alt={team.leader.name}
+                      width={500}
+                      height={500}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                 </div>
                 <div className="lg:pl-8">
