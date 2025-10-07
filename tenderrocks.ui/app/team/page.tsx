@@ -8,7 +8,7 @@ const team = {
     name: 'Dr. Adetokunbo Soyoye',
     role: 'Lead Researcher & Director',
     image: '/tksoyeye.PNG',
-    bio: 'Dr. Soyeye is a renowned expert in cell biology with over 15 years of research experience. She holds a PhD in Molecular Cell Biology and has published numerous papers in prestigious scientific journals.',
+    bio: 'Dr. Soyoye is a renowned expert in cell biology with over 15 years of research experience. She holds a PhD in Molecular Cell Biology and has published numerous papers in prestigious scientific journals.',
     email: 'adetokunbosoyoye@gmail.com',
     phone: '+44 7440 028032',
     education: 'PhD in Molecular Cell Biology, University of Lagos',
