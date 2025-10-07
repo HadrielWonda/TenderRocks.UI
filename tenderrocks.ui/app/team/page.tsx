@@ -5,13 +5,13 @@ import { Mail, Phone, GraduationCap, Award } from 'lucide-react'
 
 const team = {
   leader: {
-    name: 'Dr. Adetokunbo Soyeye',
+    name: 'Dr. Adetokunbo Soyoye',
     role: 'Lead Researcher & Director',
     image: '/tksoyeye.PNG',
     bio: 'Dr. Soyeye is a renowned expert in cell biology with over 15 years of research experience. She holds a PhD in Molecular Cell Biology and has published numerous papers in prestigious scientific journals.',
-    email: 'a.soyeye@tenderrocks.com',
+    email: 'adetokunbosoyoye@gmail.com',
     phone: '+44 7440 028032',
-    education: 'PhD in Molecular Cell Biology, University of Cambridge',
+    education: 'PhD in Molecular Cell Biology, University of Lagos',
     expertise: ['Cell Signaling Pathways', 'Environmental Toxicology', 'Molecular Biology'],
   },
   members: [
