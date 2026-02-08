@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 border border-gray-200 dark:border-gray-700 p-6;
+  }
+  
+  .card-hover {
+    @apply hover:scale-[1.02] hover:shadow-strong transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-tr-primary text-white rounded-lg hover:bg-tr-accent transition-all duration-300 font-medium inline-flex items-center justify-center gap-2 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 font-medium inline-flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-600;
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-tr-primary to-tr-accent;
+  }
+  
+  .gradient-text-lab {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-lab-primary to-lab-accent;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
