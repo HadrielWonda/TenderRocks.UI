@@ -80,7 +80,7 @@ export const MANAGEMENT_TEAM = [
     name: 'Dr. Adetokunbo Soyoye (PhD)',
     title: 'Chief Executive Officer',
     expertise: 'Environmental management, molecular genetics and reproductive science',
-    image: '/images/team/adetokunbo-soyoye.jpg'
+    image: '/images/team/adetokunbo-soyoye.PNG'
   },
   {
     name: 'Dr. Aderinola Adedokun (PhD)',
