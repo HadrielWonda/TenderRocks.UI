@@ -27,6 +27,15 @@ export default function LabFooter() {
           </div>
 
           <div>
+            <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><Link href="/trslaboratory/about" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">About Lab</Link></li>
+              <li><Link href="/trslaboratory/jobs" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Careers / Jobs</Link></li>
+              <li><Link href="/trslaboratory/contact" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Contact</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Contact Laboratory</h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
@@ -42,26 +51,6 @@ export default function LabFooter() {
                 <span className="text-gray-600 dark:text-gray-400 text-sm">{SITE.address}</span>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow TRS</h4>
-            <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/tenderrock-solutions/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/tenderrock_solutions/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://x.com/TRS_Solutions" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
-            <div className="mt-6">
-              <Link href="/" className="text-sm text-gray-600 dark:text-gray-400 hover:text-tr-primary dark:hover:text-tr-accent transition-colors inline-flex items-center">
-                ← Visit TenderRock Solutions
-              </Link>
-            </div>
           </div>
         </div>
 

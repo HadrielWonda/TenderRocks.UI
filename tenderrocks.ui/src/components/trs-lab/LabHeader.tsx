@@ -10,6 +10,7 @@ const labNav = [
   { title: "Home", href: "/trslaboratory" },
   { title: "About Lab", href: "/trslaboratory/about" },
   { title: "Services", href: "/trslaboratory/services" },
+  { title: "Jobs", href: "/trslaboratory/jobs" },
   { title: "Contact", href: "/trslaboratory/contact" },
 ]
 
