@@ -49,7 +49,7 @@ export default function Footer() {
               <a href="https://www.linkedin.com/company/tenderrock-solutions/" className="text-gray-600 dark:text-gray-400 hover:text-tr-primary">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/tenderrocks_solutions/" className="text-gray-600 dark:text-gray-400 hover:text-tr-primary">
+              <a href="https://www.instagram.com/tenderrock_solutions/" className="text-gray-600 dark:text-gray-400 hover:text-tr-primary">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://x.com/TRS_Solutions" className="text-gray-600 dark:text-gray-400 hover:text-tr-primary">

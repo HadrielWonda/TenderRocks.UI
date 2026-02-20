@@ -50,7 +50,7 @@ export default function LabFooter() {
               <a href="https://www.linkedin.com/company/tenderrock-solutions/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/tenderrocks_solutions/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">
+              <a href="https://www.instagram.com/tenderrock_solutions/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://x.com/TRS_Solutions" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors">

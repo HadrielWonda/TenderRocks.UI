@@ -19,7 +19,7 @@ export const siteConfig = {
   ],
   socialLinks: {
     linkedin: "https://www.linkedin.com/company/tenderrock-solutions/",
-    instagram: "https://www.instagram.com/tenderrocks_solutions/",
+    instagram: "https://www.instagram.com/tenderrock_solutions/",
     twitter: "https://x.com/TRS_Solutions",
     facebook: "https://www.facebook.com/tenderrocksolutions",
   },
