@@ -11,25 +11,6 @@ import {
 } from 'lucide-react'
 
 export default function TRSLaboratoryPage() {
-  const diagnosticServices = [
-    'Paternity Testing',
-    'Sperm Nucleotide Assay',
-    'Embryonic DNA Screening',
-    'Sickle Cell Variant Testing',
-    'Complete Hematology Panels',
-    'PCR-based Pathogen Detection',
-    'Molecular Microbial Assays'
-  ]
-
-  const molecularTools = [
-    { name: 'PCR Technology', description: 'Polymerase Chain Reaction for genetic material detection' },
-    { name: 'Capillary Gel Electrophoresis', description: 'High-resolution DNA/RNA analysis' },
-    { name: 'DNA/RNA Analysis', description: 'Comprehensive genetic information unraveling' },
-    { name: 'Proteomics', description: 'Cellular function and biomarker examination' },
-    { name: 'Metagenomics', description: 'Microbial community analysis' },
-    { name: 'Bioinformatics', description: 'Computational biological data interpretation' }
-  ]
-
   const publicHealthImpact = [
     'Early disease detection and timely intervention',
     'High specificity and sensitivity in results',
@@ -45,16 +26,16 @@ export default function TRSLaboratoryPage() {
       <section className="text-center py-20 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl">
         <div className="container-narrow">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-            TRS Molecular Laboratory
+            TRS Molecular Diagnostic Laboratory
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Advanced molecular and reproductive diagnostics facility providing high-quality laboratory services with a focus on capacity development and scientific excellence.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="#services" className="btn-primary bg-cyan-600 hover:bg-cyan-700">
-              Our Services
+            <Link href="/trslaboratory/services" className="btn-primary bg-cyan-600 hover:bg-cyan-700">
+              Explore Our Services
             </Link>
-            <Link href="#contact" className="btn-secondary">
+            <Link href="/trslaboratory/contact" className="btn-secondary">
               Contact Laboratory
             </Link>
           </div>
@@ -71,17 +52,17 @@ export default function TRSLaboratoryPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { 
-                icon: 'o', 
+                icon: '❌', 
                 title: 'Misdiagnosis', 
                 description: 'Incorrect identification leading to ineffective treatment' 
               },
               { 
-                icon: 'o', 
+                icon: '⏰', 
                 title: 'Delayed Diagnosis', 
                 description: 'Prolonged waiting times worsening patient outcomes' 
               },
               { 
-                icon: 'o', 
+                icon: '💊', 
                 title: 'Empirical Treatment', 
                 description: 'Treatment without confirmatory tests' 
               }
@@ -96,46 +77,40 @@ export default function TRSLaboratoryPage() {
         </div>
       </section>
 
-      {/* Molecular Tools */}
-      <section id="tools" className="section-padding bg-gray-50 dark:bg-gray-800/50">
+      {/* Key Services Overview */}
+      <section className="section-padding bg-gray-50 dark:bg-gray-800/50">
         <div className="container-narrow">
-          <h2 className="text-3xl font-bold text-center mb-12">Molecular Tools & Technologies</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {molecularTools.map((tool, index) => (
-              <div key={index} className="card group hover:border-cyan-500 transition-colors">
-                <Dna className="h-10 w-10 text-cyan-600 mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-semibold mb-2">{tool.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{tool.description}</p>
+          <h2 className="text-3xl font-bold text-center mb-12">Key Diagnostic Services</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'Precision Molecular Diagnostics', icon: '🧬' },
+              { title: 'Bioinformatics Services', icon: '💻' },
+              { title: 'Hematology Testing', icon: '🩸' },
+              { title: 'Embryonic DNA Screening', icon: '🥚' },
+            ].map((service, index) => (
+              <div key={index} className="card text-center group hover:border-cyan-500 transition-colors">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="font-semibold">{service.title}</h3>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/trslaboratory/services" className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 font-medium inline-flex items-center">
+              View All Services →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Diagnostic Services */}
-      <section id="services" className="section-padding">
+      {/* Public Health Impact */}
+      <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Diagnostic Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Public Health Impact</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="card">
               <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <Microscope className="mr-3 h-8 w-8 text-cyan-600" />
-                Clinical Applications
-              </h3>
-              <ul className="space-y-3">
-                {diagnosticServices.map((service, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="h-2 w-2 bg-cyan-500 rounded-full mt-2 mr-3"></div>
-                    <span>{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="card">
-              <h3 className="text-2xl font-bold mb-6 flex items-center">
                 <Target className="mr-3 h-8 w-8 text-cyan-600" />
-                Public Health Impact
+                Our Contribution
               </h3>
               <ul className="space-y-3">
                 {publicHealthImpact.map((impact, index) => (
@@ -146,49 +121,24 @@ export default function TRSLaboratoryPage() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TRS Advantage */}
-      <section className="section-padding bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
-        <div className="container-narrow">
-          <h2 className="text-3xl font-bold text-center mb-12">The TRS Laboratory Advantage</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { 
-                title: 'Affordable', 
-                description: 'Cost-conscious pricing for accessibility',
-                icon: '💰'
-              },
-              { 
-                title: 'Accessible', 
-                description: 'Clinician-friendly referral pathways',
-                icon: '📞'
-              },
-              { 
-                title: 'Quality-Assured', 
-                description: 'Global laboratory partnerships',
-                icon: '🛡️'
-              },
-              { 
-                title: 'Training Focus', 
-                description: 'Capacity development programs',
-                icon: '🎓'
-              }
-            ].map((advantage, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl mb-4">{advantage.icon}</div>
-                <h3 className="font-semibold mb-2">{advantage.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{advantage.description}</p>
-              </div>
-            ))}
+            <div className="card">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <ShieldCheck className="mr-3 h-8 w-8 text-cyan-600" />
+                Quality & Standards
+              </h3>
+              <ul className="space-y-3">
+                <li>Validated protocols and SOPs</li>
+                <li>HEFMA registration underway</li>
+                <li>Confidentiality and biosafety</li>
+                <li>Continuous quality improvement</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Partnership Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
         <div className="container-narrow text-center">
           <h2 className="text-3xl font-bold mb-8">Collaboration, Not Competition</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
@@ -203,11 +153,10 @@ export default function TRSLaboratoryPage() {
               </ul>
             </div>
             <div className="card">
-              <h3 className="font-semibold mb-4">Quality & Standards</h3>
+              <h3 className="font-semibold mb-4">Training & Capacity</h3>
               <ul className="space-y-2">
-                <li className="text-gray-600 dark:text-gray-400">Validated protocols & SOPs</li>
-                <li className="text-gray-600 dark:text-gray-400">HEFMA registration underway</li>
-                <li className="text-gray-600 dark:text-gray-400">Continuous quality improvement</li>
+                <li className="text-gray-600 dark:text-gray-400">Hands-on training in molecular techniques</li>
+                <li className="text-gray-600 dark:text-gray-400">Internships for students</li>
               </ul>
             </div>
           </div>

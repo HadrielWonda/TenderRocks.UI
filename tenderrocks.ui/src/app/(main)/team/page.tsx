@@ -1,5 +1,6 @@
-import { MANAGEMENT_TEAM, EXPERT_PANEL } from '@/lib/constants'
+import { MANAGEMENT_TEAM, EXPERT_PANEL, ADDITIONAL_TEAM } from '@/lib/constants'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card'
+import Image from 'next/image'
 import { Award, Briefcase, GraduationCap } from 'lucide-react'
 
 export default function TeamPage() {
@@ -22,7 +23,15 @@ export default function TeamPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {MANAGEMENT_TEAM.map((member, index) => (
-              <Card key={index} className="card-hover">
+              <Card key={index} className="card-hover flex flex-col items-center text-center">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-tr-primary">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <CardHeader>
                   <CardTitle className="text-lg">{member.name}</CardTitle>
                   <div className="text-sm text-tr-primary font-medium">{member.title}</div>
@@ -44,7 +53,15 @@ export default function TeamPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {EXPERT_PANEL.map((expert, index) => (
-              <Card key={index} className="card-hover">
+              <Card key={index} className="card-hover flex flex-col items-center text-center">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-tr-primary">
+                  <Image
+                    src={expert.image}
+                    alt={expert.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <CardHeader>
                   <CardTitle className="text-lg">{expert.name}</CardTitle>
                   <div className="text-sm text-tr-primary font-medium">{expert.expertise}</div>
@@ -57,6 +74,38 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+
+      {ADDITIONAL_TEAM.length > 0 && (
+        <section className="section-padding">
+          <div className="container-narrow">
+            <h2 className="text-3xl font-bold mb-8 flex items-center">
+              <Briefcase className="mr-3 h-8 w-8 text-tr-primary" />
+              Business Development
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {ADDITIONAL_TEAM.map((member, index) => (
+                <Card key={index} className="card-hover flex flex-col items-center text-center">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-tr-primary">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-lg">{member.name}</CardTitle>
+                    <div className="text-sm text-tr-primary font-medium">{member.title}</div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">{member.expertise}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="section-padding">
         <div className="container-narrow">

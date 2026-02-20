@@ -9,7 +9,7 @@ export default function LabFooter() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-              TRS Molecular Laboratory
+              TRS Molecular Diagnostic Laboratory
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               An advanced molecular and reproductive diagnostics facility providing high-quality laboratory services with a focus on capacity development and scientific excellence.
@@ -19,9 +19,9 @@ export default function LabFooter() {
           <div>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Laboratory Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Molecular Diagnostics</Link></li>
-              <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Reproductive Health</Link></li>
-              <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Genetic Testing</Link></li>
+              <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Precision Molecular Diagnostics</Link></li>
+              <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Bioinformatics Services</Link></li>
+              <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Hematology & Prenatal Testing</Link></li>
               <li><Link href="/trslaboratory/services" className="text-gray-600 dark:text-gray-400 hover:text-lab-primary dark:hover:text-lab-accent transition-colors text-sm">Training Programs</Link></li>
             </ul>
           </div>
@@ -68,7 +68,7 @@ export default function LabFooter() {
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-600 dark:text-gray-400 text-sm">
-              © {new Date().getFullYear()} TRS Molecular Laboratory. Part of TenderRock Solutions.
+              © {new Date().getFullYear()} TRS Molecular Diagnostic Laboratory. Part of TenderRock Solutions.
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">
               HEFMA registration underway • Quality assured diagnostics

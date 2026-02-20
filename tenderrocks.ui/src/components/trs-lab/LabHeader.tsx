@@ -25,7 +25,7 @@ export default function LabHeader() {
               <div className="relative h-10 w-10">
                 <Image
                   src="/logos/trs-lab-logo.svg"
-                  alt="TRS Molecular Laboratory Logo"
+                  alt="TRS Molecular Diagnostic Laboratory Logo"
                   fill
                   className="object-contain"
                   priority
@@ -33,7 +33,7 @@ export default function LabHeader() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-900 dark:text-white">
-                  TRS Molecular Laboratory
+                  TRS Molecular Diagnostic Laboratory
                 </span>
                 <span className="text-xs text-gray-500 dark:text-gray-400">
                   Advanced Diagnostics & Research

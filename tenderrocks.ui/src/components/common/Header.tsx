@@ -28,7 +28,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="relative h-10 w-10">
                 <Image
-                  src="/logos/trs-logo.jpg"
+                  src="/logos/trs-logo.svg"
                   alt="TenderRock Solutions Logo"
                   fill
                   className="object-contain"
@@ -60,7 +60,7 @@ export default function Header() {
               href="/trslaboratory"
               className="ml-4 px-4 py-2 text-sm font-medium text-white bg-lab-primary hover:bg-lab-accent rounded-lg transition-colors"
             >
-              TRS Lab
+              TRS Diagnostics Molecular Laboratory
             </Link>
           </div>
 
@@ -99,7 +99,7 @@ export default function Header() {
                 className="block px-3 py-2 text-base font-medium text-white bg-lab-primary hover:bg-lab-accent rounded-lg transition-colors mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                TRS Laboratory
+                TRS Diagnostics Molecular Laboratory
               </Link>
             </div>
           </div>
