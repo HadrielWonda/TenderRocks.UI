@@ -28,7 +28,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="relative h-10 w-10">
                 <Image
-                  src="/logos/trs-logo.svg"
+                  src="/logos/trs-logo.jpg"
                   alt="TenderRock Solutions Logo"
                   fill
                   className="object-contain"
