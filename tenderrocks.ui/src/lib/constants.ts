@@ -107,13 +107,13 @@ export const EXPERT_PANEL = [
     name: 'Dr. Titilayo Soyoye (PhD)',
     expertise: 'Machine Learning,Data Analysis,Artificial Intelligence, Fuzzy Systems, Predictive Modeling, Intelligent Decision Making',
     role: 'Researcher, University of Huddersfield, England ,Lecturer at Study Group',
-    image: '/images/team/titilayo-soyoye.jpg'
+    image: '/images/team/titilayo-soyoye.jpeg'
   },
   {
     name: 'Dr Temitope Fadipe (PhD)',
     expertise: 'Molecular Genetics & Industrial Biotechnology',
     role: 'Principal Research Officer, Federal Institute of Industrial Research, Oshodi (FIIRO); Currently conducting postdoctoral work at the Spanish National Centre for Biotechnology (CNB-CSIC) through the Science by Women programme.',
-    image: '/images/team/temitope-fadipe.jpg'
+    image: '/images/team/temitope-fadipe.jpeg'
   },
   {
     name: 'Dr. John Ojeogwu (PhD)',
@@ -137,7 +137,7 @@ export const EXPERT_PANEL = [
     name: 'Dr. Victoria Orovboni, Ph.D.',
     expertise: 'Molecular Genetics and Cancer Research',
     role: 'Business Development Researcher at Cancer Research UK (CancerTools.org)',
-    image: '/images/team/victoria-orovboni.jpg'
+    image: '/images/team/victoria-orovboni.jpeg'
   },
 ]
 
