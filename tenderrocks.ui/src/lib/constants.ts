@@ -105,8 +105,8 @@ export const EXPERT_PANEL = [
   },
   {
     name: 'Dr. Titilayo Soyoye (PhD)',
-    expertise: 'Researcher,Lecturer at Study Group,Machine Learning,Data Analysis,Artificial Intelligence, Fuzzy Systems, Predictive Modeling, Intelligent Decision Making',
-    role: 'University of Huddersfield, England',
+    expertise: 'Machine Learning,Data Analysis,Artificial Intelligence, Fuzzy Systems, Predictive Modeling, Intelligent Decision Making',
+    role: 'Researcher, University of Huddersfield, England ,Lecturer at Study Group',
     image: '/images/team/titilayo-soyoye.jpg'
   },
   {
