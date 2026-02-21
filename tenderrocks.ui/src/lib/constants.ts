@@ -129,9 +129,9 @@ export const EXPERT_PANEL = [
   },
   {
     name: 'Dr. Oluwatosin Adesile (PhD)',
-    expertise: 'Mass Communication & Research',
-    role: 'Lecturer II, Elizade University',
-    image: '/images/team/oluwatosin-adesile.jpg'
+    expertise: 'Mass Communication Scholar, Researcher, Public Relations/Advertising and AI Specialist',
+    role: 'Senior Lecturer of Mass Communication,NOUN, Elizade University',
+    image: '/images/team/oluwatosin-adesile.jpeg'
   },
   {
     name: 'Dr. Victoria Orovboni, Ph.D.',
