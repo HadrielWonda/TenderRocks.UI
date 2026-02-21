@@ -60,7 +60,7 @@ export default function LabFooter() {
               © {new Date().getFullYear()} TRS Molecular Diagnostic Laboratory. Part of TenderRock Solutions.
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">
-              HEFMA registration underway • Quality assured diagnostics
+              HEFAMAA registration underway • Quality assured diagnostics
             </div>
           </div>
         </div>
