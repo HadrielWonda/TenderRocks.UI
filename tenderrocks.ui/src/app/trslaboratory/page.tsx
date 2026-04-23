@@ -1,167 +1,191 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { 
-  Dna, 
-  Microscope, 
-  ShieldCheck, 
-  Users, 
-  Target,
-  Activity,
-  AlertTriangle
-} from 'lucide-react'
+'use client'
 
-export default function TRSLaboratoryPage() {
-  const publicHealthImpact = [
-    'Early disease detection and timely intervention',
-    'High specificity and sensitivity in results',
-    'Reduced misdiagnosis and delayed treatment',
-    'Evidence-based healthcare practices',
-    'Enhanced disease surveillance',
-    'Reduced antimicrobial resistance'
-  ]
+import { useState } from 'react'
+import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { SITE } from '@/lib/constants'
+import StaticMap from '@/components/trs-lab/StaticMap'
+
+const LAB_ADDRESS = "PLOT 28 AP STREET, Itokin Rd, beside LASPOTECH STAFF QUARTERS, Ikorodu, Lagos, Nigeria"
+
+export default function LabContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    institution: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    // Simulate submission (replace with actual API call)
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setSubmitSuccess(true)
+      setFormData({ name: '', email: '', institution: '', message: '' })
+    }, 1500)
+  }
 
   return (
-    <div className="space-y-20">
-      {/* Hero Section */}
-      <section className="text-center py-20 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl">
-        <div className="container-narrow">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-            TRS Molecular Diagnostic Laboratory
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            Advanced molecular and reproductive diagnostics facility providing high-quality laboratory services with a focus on capacity development and scientific excellence.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/trslaboratory/services" className="btn-primary bg-cyan-600 hover:bg-cyan-700">
-              Explore Our Services
-            </Link>
-            <Link href="/trslaboratory/contact" className="btn-secondary">
-              Contact Laboratory
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div className="section-padding">
+      <div className="container-narrow">
+        <h1 className="text-4xl font-bold mb-6 gradient-text-lab text-center">
+          Contact TRS Molecular Diagnostic Laboratory
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12">
+          For inquiries about diagnostic services, partnerships, or training opportunities.
+        </p>
 
-      {/* The Diagnostic Gap */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-3xl font-bold mb-8 flex items-center">
-            <AlertTriangle className="mr-3 h-8 w-8 text-red-500" />
-            The Diagnostic Gap We Address
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { 
-                icon: '❌', 
-                title: 'Misdiagnosis', 
-                description: 'Incorrect identification leading to ineffective treatment' 
-              },
-              { 
-                icon: '⏰', 
-                title: 'Delayed Diagnosis', 
-                description: 'Prolonged waiting times worsening patient outcomes' 
-              },
-              { 
-                icon: '💊', 
-                title: 'Empirical Treatment', 
-                description: 'Treatment without confirmatory tests' 
-              }
-            ].map((issue, index) => (
-              <div key={index} className="card border-l-4 border-red-500">
-                <div className="text-2xl mb-2">{issue.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{issue.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{issue.description}</p>
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Left Column: Contact Info + Map */}
+          <div className="space-y-6">
+            <div className="card p-6">
+              <h2 className="text-xl font-semibold mb-4">Laboratory Contact</h2>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <Mail className="h-5 w-5 text-lab-primary mt-0.5 mr-3" />
+                  <div>
+                    <div className="font-medium">Email</div>
+                    <a href={`mailto:${SITE.email}`} className="text-gray-600 dark:text-gray-400 hover:text-lab-primary">
+                      {SITE.email}
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Phone className="h-5 w-5 text-lab-primary mt-0.5 mr-3" />
+                  <div>
+                    <div className="font-medium">Phone</div>
+                    <a href={`tel:${SITE.phone}`} className="text-gray-600 dark:text-gray-400 hover:text-lab-primary">
+                      {SITE.phone}
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <MapPin className="h-5 w-5 text-lab-primary mt-0.5 mr-3" />
+                  <div>
+                    <div className="font-medium">Address</div>
+                    <p className="text-gray-600 dark:text-gray-400">{LAB_ADDRESS}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div className="card p-6">
+              <h2 className="text-xl font-semibold mb-4">Location Map</h2>
+              <StaticMap 
+                address={LAB_ADDRESS}
+                zoom={16}
+                width={500}
+                height={300}
+              />
+              <p className="text-sm text-gray-500 mt-3 text-center">
+                <a 
+                  href="https://maps.app.goo.gl/TtkJp7BNBatUxAgG9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lab-primary hover:underline"
+                >
+                  Open in Google Maps for directions →
+                </a>
+              </p>
+            </div>
+
+            <div className="card p-6">
+              <h2 className="text-xl font-semibold mb-4">Quality Assurance</h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                HEFMA registration underway. All tests follow validated protocols and standard operating procedures.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: Contact Form */}
+          <div className="card p-6">
+            <h2 className="text-xl font-semibold mb-4">Request Information</h2>
+            {submitSuccess && (
+              <div className="mb-4 p-3 bg-green-100 text-green-700 rounded-lg">
+                Thank you! We'll respond shortly.
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Services Overview */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800/50">
-        <div className="container-narrow">
-          <h2 className="text-3xl font-bold text-center mb-12">Key Diagnostic Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Precision Molecular Diagnostics', icon: '🧬' },
-              { title: 'Bioinformatics Services', icon: '💻' },
-              { title: 'Hematology Testing', icon: '🩸' },
-              { title: 'Embryonic DNA Screening', icon: '🥚' },
-            ].map((service, index) => (
-              <div key={index} className="card text-center group hover:border-cyan-500 transition-colors">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="font-semibold">{service.title}</h3>
+            )}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lab-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+                />
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/trslaboratory/services" className="text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 font-medium inline-flex items-center">
-              View All Services →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Public Health Impact */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-3xl font-bold text-center mb-12">Public Health Impact</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="card">
-              <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <Target className="mr-3 h-8 w-8 text-cyan-600" />
-                Our Contribution
-              </h3>
-              <ul className="space-y-3">
-                {publicHealthImpact.map((impact, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="h-2 w-2 bg-green-500 rounded-full mt-2 mr-3"></div>
-                    <span>{impact}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="card">
-              <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <ShieldCheck className="mr-3 h-8 w-8 text-cyan-600" />
-                Quality & Standards
-              </h3>
-              <ul className="space-y-3">
-                <li>Validated protocols and SOPs</li>
-                <li>HEFMA registration underway</li>
-                <li>Confidentiality and biosafety</li>
-                <li>Continuous quality improvement</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Section */}
-      <section className="section-padding bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
-        <div className="container-narrow text-center">
-          <h2 className="text-3xl font-bold mb-8">Collaboration, Not Competition</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
-            Working with healthcare facilities to make quality diagnostics accessible — so no patient is treated in uncertainty.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <div className="card">
-              <h3 className="font-semibold mb-4">Partner Laboratories</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-600 dark:text-gray-400">Inqaba Biotechnical Industries (Nigeria)</li>
-                <li className="text-gray-600 dark:text-gray-400">Jena Bioscience (Germany)</li>
-              </ul>
-            </div>
-            <div className="card">
-              <h3 className="font-semibold mb-4">Training & Capacity</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-600 dark:text-gray-400">Hands-on training in molecular techniques</li>
-                <li className="text-gray-600 dark:text-gray-400">Internships for students</li>
-              </ul>
-            </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lab-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="institution" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Institution / Organization
+                </label>
+                <input
+                  type="text"
+                  id="institution"
+                  name="institution"
+                  value={formData.institution}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lab-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-lab-primary focus:border-transparent dark:bg-gray-800 dark:text-white"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-primary w-full bg-lab-primary hover:bg-lab-accent"
+              >
+                {isSubmitting ? (
+                  'Sending...'
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-4 w-4" />
+                  </>
+                )}
+              </button>
+            </form>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   )
 }
