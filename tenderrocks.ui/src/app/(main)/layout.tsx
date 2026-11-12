@@ -1,18 +1,20 @@
-import Header from '@/components/common/Header'
-import Footer from '@/components/common/Footer'
+import SiteFooter from '@/components/SiteFooter';
+import SiteHeader from '@/components/SiteHeader';
 
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function MainLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-tr-background to-white dark:from-gray-900 dark:to-gray-800">
-      <Header />
-      <main className="flex-grow">
+    <div className="flex min-h-screen flex-col">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2"
+      >
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main id="main" className="flex-1">
         {children}
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
-  )
+  );
 }

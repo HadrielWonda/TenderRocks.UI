@@ -1,87 +1,109 @@
-import Link from 'next/link'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/common/Card'
-import {  Building, Stethoscope, Microscope } from 'lucide-react'
+import {
+  Building2,
+  Cpu,
+  ExternalLink,
+  Microscope,
+  Stethoscope,
+  type LucideIcon,
+} from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import PageHero from '@/components/PageHero';
+import { LABORATORY } from '@/lib/site';
 
-const partners = [
+export const metadata: Metadata = {
+  title: 'Partnerships',
+  description: 'The organisations TenderRock Solutions works with, and how to become a partner.',
+};
+
+interface Partner {
+  readonly name: string;
+  readonly kind: string;
+  readonly description: string;
+  readonly icon: LucideIcon;
+  readonly url?: string;
+}
+
+const PARTNERS: readonly Partner[] = [
   {
     name: 'Aris',
-    description: 'A strategic partner in advancing healthcare and diagnostic solutions across Nigeria.',
-    icon: Building,
-    type: 'Corporate Partner',
+    kind: 'Corporate partner',
+    description:
+      'A strategic partner in advancing healthcare and diagnostic solutions across Nigeria.',
+    icon: Building2,
   },
   {
     name: 'Green Leaf Clinic',
-    description: 'Collaboration in fertility medicine and reproductive health education, enhancing clinical outcomes.',
+    kind: 'Clinical partner',
+    description:
+      'Collaboration in fertility medicine and reproductive health education, improving clinical outcomes.',
     icon: Stethoscope,
-    type: 'Clinical Partner',
   },
   {
     name: 'Afren AI',
-    description: 'Joint research initiatives integrating artificial intelligence with genomic data analysis.',
-    icon: Building,
-    type: 'Technology Partner',
+    kind: 'Technology partner',
+    description: 'Joint research that brings artificial intelligence to genomic data analysis.',
+    icon: Cpu,
   },
   {
-    name: 'TRS Molecular Diagnostic Laboratory',
-    description: 'Our dedicated molecular diagnostics entity, working in synergy to provide advanced testing and capacity building.',
+    name: LABORATORY.name,
+    kind: 'Sister company',
+    description:
+      'Our dedicated molecular diagnostics company, working alongside us on advanced testing and capacity building.',
     icon: Microscope,
-    type: 'Sister Entity',
+    url: LABORATORY.url,
   },
-]
+];
 
 export default function PartnershipsPage() {
   return (
-    <div className="space-y-12">
-      <section className="section-padding">
-        <div className="container-narrow text-center">
-          <h1 className="text-4xl font-bold mb-6 gradient-text">Our Partnerships</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            TenderRock Solutions collaborates with governments, private institutions, health facilities, and academic organisations to deliver impactful solutions.
-          </p>
-        </div>
-      </section>
+    <>
+      <PageHero
+        eyebrow="Partnerships"
+        title="We do our best work with others"
+        lead="TenderRock Solutions collaborates with governments, private institutions, health facilities and academic organisations to deliver solutions that last."
+      />
 
-      <section className="section-padding bg-gray-50 dark:bg-gray-800/30">
-        <div className="container-narrow">
-          <h2 className="text-3xl font-bold mb-12 text-center flex items-center justify-center">
-            <Stethoscope className="mr-3 h-8 w-8 text-tr-primary" />
-            Key Partners
+      <section className="section" aria-labelledby="partners-heading">
+        <div className="container-page">
+          <h2 id="partners-heading" className="text-3xl">
+            Key partners
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {partners.map((partner, index) => {
-              const Icon = partner.icon
-              return (
-                <Card key={index} className="card-hover">
-                  <CardHeader>
-                    <div className="flex items-center mb-4">
-                      <Icon className="h-10 w-10 text-tr-primary mr-4" />
-                      <div>
-                        <CardTitle>{partner.name}</CardTitle>
-                        <p className="text-sm text-tr-primary font-medium">{partner.type}</p>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 dark:text-gray-400">{partner.description}</p>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
+          <ul className="mt-10 grid gap-6 md:grid-cols-2">
+            {PARTNERS.map((partner) => (
+              <li key={partner.name} className="card p-8">
+                <partner.icon className="h-8 w-8 text-brand-700" aria-hidden="true" />
+                <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-slate-600">
+                  {partner.kind}
+                </p>
+                <h3 className="mt-1 text-xl">{partner.name}</h3>
+                <p className="mt-2 leading-relaxed text-slate-600">{partner.description}</p>
+                {partner.url && (
+                  <a href={partner.url} className="link mt-4 inline-flex items-center gap-1.5">
+                    Visit the laboratory website
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-narrow text-center">
-          <h2 className="text-3xl font-bold mb-6">Become a Partner</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-            We are always open to new collaborations. Partner with us to access interdisciplinary expertise, advanced diagnostics, and a growing pipeline of African scientific talent.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Contact Us for Partnership
+      <section className="bg-ink-950">
+        <div className="container-page flex flex-col gap-8 py-16 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 className="text-3xl text-white">Become a partner</h2>
+            <p className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300">
+              Partner with us for interdisciplinary expertise, advanced diagnostics and a growing
+              pipeline of African scientific talent.
+            </p>
+          </div>
+          <Link href="/contact" className="btn-on-dark shrink-0">
+            Start a conversation
           </Link>
         </div>
       </section>
-    </div>
-  )
+    </>
+  );
 }

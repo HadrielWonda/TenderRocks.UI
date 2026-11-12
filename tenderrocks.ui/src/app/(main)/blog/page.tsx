@@ -1,14 +1,29 @@
-import ComingSoon from '@/components/common/ComingSoon'
+import type { Metadata } from 'next';
+import InDevelopment from '@/components/InDevelopment';
+import PageHero from '@/components/PageHero';
+
+export const metadata: Metadata = {
+  title: 'Research blog',
+  description:
+    'Research publications, scientific insights and case studies from TenderRock Solutions.',
+};
+
+const TOPICS = [
+  'Peer-reviewed publications from our team',
+  'Scientific insights explained for a wider audience',
+  'Case studies from our advisory work',
+  'Developments in environmental and life sciences',
+] as const;
 
 export default function BlogPage() {
   return (
-    <div className="section-padding">
-      <div className="container-narrow">
-        <ComingSoon 
-          title="Research Blog" 
-          description="Our research blog is under development. We'll be sharing peer-reviewed publications, scientific insights, case studies, and industry developments. Subscribe to our newsletter to stay updated."
-        />
-      </div>
-    </div>
-  )
+    <>
+      <PageHero
+        eyebrow="Research blog"
+        title="Research and insight, shared openly"
+        lead="We are preparing a blog for our research, the thinking behind it and what we learn from our projects."
+      />
+      <InDevelopment topics={TOPICS} />
+    </>
+  );
 }
