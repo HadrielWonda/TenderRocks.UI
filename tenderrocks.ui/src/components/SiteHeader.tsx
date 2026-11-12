@@ -1,11 +1,11 @@
 'use client';
 
 import { ExternalLink, Menu, X } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { LABORATORY, PRIMARY_NAVIGATION, SITE } from '@/lib/site';
+import Logo from './Logo';
 
 const MOBILE_MENU_ID = 'site-mobile-menu';
 
@@ -29,14 +29,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
       <div className="container-page flex h-20 items-center justify-between gap-6 md:h-24">
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${SITE.name} home`}>
-          <Image
-            src="/logos/tenderrocks-logo.png"
-            alt={SITE.name}
-            width={212}
-            height={86}
-            priority
-            className="h-11 w-auto md:h-14"
-          />
+          <Logo className="h-12 w-auto md:h-16" />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-0.5 xl:flex">
