@@ -13,7 +13,7 @@ export const SITE = {
 /** TRS Molecular Diagnostic Laboratory is a separate company with its own website. */
 export const LABORATORY = {
   name: 'TRS Molecular Diagnostic Laboratory',
-  url: 'https://trs.tenderrocks.com',
+  url: 'https://trs.tenderrocksolutions.com',
 } as const;
 
 export interface NavigationLink {

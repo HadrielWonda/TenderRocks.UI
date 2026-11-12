@@ -5,7 +5,7 @@ const securityHeaders = [
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
 ];
 
-const LABORATORY_URL = 'https://trs.tenderrocks.com';
+const LABORATORY_URL = 'https://trs.tenderrocksolutions.com';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
